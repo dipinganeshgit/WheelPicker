@@ -9,23 +9,32 @@
 /* Begin PBXBuildFile section */
 		9C19216A2C329375004207C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1921692C329375004207C8 /* AppDelegate.swift */; };
 		9C19216C2C329375004207C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19216B2C329375004207C8 /* SceneDelegate.swift */; };
-		9C19216E2C329375004207C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19216D2C329375004207C8 /* ViewController.swift */; };
+		9C19216E2C329375004207C8 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19216D2C329375004207C8 /* SwiftViewController.swift */; };
 		9C1921712C329375004207C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C19216F2C329375004207C8 /* Main.storyboard */; };
 		9C1921742C329375004207C8 /* WheelPicker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1921722C329375004207C8 /* WheelPicker.xcdatamodeld */; };
 		9C1921762C329377004207C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1921752C329377004207C8 /* Assets.xcassets */; };
 		9C1921792C329377004207C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1921772C329377004207C8 /* LaunchScreen.storyboard */; };
+		9C1921812C3293BF004207C8 /* WheelPickerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1921802C3293BF004207C8 /* WheelPickerContainer.swift */; };
+		9C1921842C329510004207C8 /* WheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1921832C329510004207C8 /* WheelPicker.swift */; };
+		9C19218A2C32BE74004207C8 /* WheelPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1921892C32BE74004207C8 /* WheelPickerHelper.swift */; };
+		9CAEB0B52C33C033006425D2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEB0B42C33C033006425D2 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C1921662C329375004207C8 /* WheelPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1921692C329375004207C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C19216B2C329375004207C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9C19216D2C329375004207C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C19216D2C329375004207C8 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		9C1921702C329375004207C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C1921732C329375004207C8 /* WheelPicker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WheelPicker.xcdatamodel; sourceTree = "<group>"; };
 		9C1921752C329377004207C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C1921782C329377004207C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C19217A2C329377004207C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1921802C3293BF004207C8 /* WheelPickerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerContainer.swift; sourceTree = "<group>"; };
+		9C1921832C329510004207C8 /* WheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPicker.swift; sourceTree = "<group>"; };
+		9C1921852C32B4CB004207C8 /* WheelPicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WheelPicker-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C1921892C32BE74004207C8 /* WheelPickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerHelper.swift; sourceTree = "<group>"; };
+		9CAEB0B42C33C033006425D2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +69,25 @@
 			children = (
 				9C1921692C329375004207C8 /* AppDelegate.swift */,
 				9C19216B2C329375004207C8 /* SceneDelegate.swift */,
-				9C19216D2C329375004207C8 /* ViewController.swift */,
+				9C19216D2C329375004207C8 /* SwiftViewController.swift */,
+				9C1921822C3294FB004207C8 /* WheelPicker */,
 				9C19216F2C329375004207C8 /* Main.storyboard */,
 				9C1921752C329377004207C8 /* Assets.xcassets */,
 				9C1921772C329377004207C8 /* LaunchScreen.storyboard */,
 				9C19217A2C329377004207C8 /* Info.plist */,
 				9C1921722C329375004207C8 /* WheelPicker.xcdatamodeld */,
+				9C1921852C32B4CB004207C8 /* WheelPicker-Bridging-Header.h */,
+			);
+			path = WheelPicker;
+			sourceTree = "<group>";
+		};
+		9C1921822C3294FB004207C8 /* WheelPicker */ = {
+			isa = PBXGroup;
+			children = (
+				9C1921802C3293BF004207C8 /* WheelPickerContainer.swift */,
+				9C1921832C329510004207C8 /* WheelPicker.swift */,
+				9C1921892C32BE74004207C8 /* WheelPickerHelper.swift */,
+				9CAEB0B42C33C033006425D2 /* Config.swift */,
 			);
 			path = WheelPicker;
 			sourceTree = "<group>";
@@ -102,6 +124,7 @@
 				TargetAttributes = {
 					9C1921652C329375004207C8 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -141,10 +164,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C19216E2C329375004207C8 /* ViewController.swift in Sources */,
+				9C19216E2C329375004207C8 /* SwiftViewController.swift in Sources */,
+				9C1921842C329510004207C8 /* WheelPicker.swift in Sources */,
 				9C19216A2C329375004207C8 /* AppDelegate.swift in Sources */,
 				9C19216C2C329375004207C8 /* SceneDelegate.swift in Sources */,
+				9C19218A2C32BE74004207C8 /* WheelPickerHelper.swift in Sources */,
+				9CAEB0B52C33C033006425D2 /* Config.swift in Sources */,
 				9C1921742C329375004207C8 /* WheelPicker.xcdatamodeld in Sources */,
+				9C1921812C3293BF004207C8 /* WheelPickerContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +321,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EMA66R8VA4;
+				DEVELOPMENT_TEAM = R9GV623J2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelPicker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -312,7 +340,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftifyme.WheelPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "WheelPicker/WheelPicker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -322,9 +352,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EMA66R8VA4;
+				DEVELOPMENT_TEAM = R9GV623J2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelPicker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -340,7 +371,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.swiftifyme.WheelPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "WheelPicker/WheelPicker-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
