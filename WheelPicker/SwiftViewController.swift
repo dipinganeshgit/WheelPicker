@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class SwiftViewController: UIViewController {
 
@@ -14,11 +15,13 @@ class SwiftViewController: UIViewController {
     @IBOutlet weak var segSteps: UISegmentedControl!
     @IBOutlet weak var segMultiplier: UISegmentedControl!
     @IBOutlet weak var sliderSpacing: UISlider!
+    @IBOutlet weak var txtFieldUnit: UITextField!
 
     @IBOutlet weak var viewPicker: UIView!
     public var config : Config = Config()
     var wheelPicker : WheelPickerContainer = WheelPickerContainer(config: .init())
-    
+    var cancellables = Set<AnyCancellable>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,11 +29,27 @@ class SwiftViewController: UIViewController {
         segSteps.selectedSegmentIndex = 1
         segMultiplier.selectedSegmentIndex = 1
         sliderSpacing.value = 5
+        txtFieldUnit.text = "Kg"
 
-        let configuration = [WheelPickerHelper.WheelPickerMaXValue : getSelectedValueFromSegmentedControl(segControl: segCount) , WheelPickerHelper.WheelPickerInterval : getSelectedValueFromSegmentedControl(segControl: segSteps) , WheelPickerHelper.WheelPickerSpacing : sliderSpacing.value , WheelPickerHelper.WheelPickerShowText : true , WheelPickerHelper.WheelPickerMultiplier : getSelectedValueFromSegmentedControl(segControl: segMultiplier) , WheelPickerHelper.WheelPickerUnits : "kg"] as [String : Any]
+        let configuration = [WheelPickerHelper.WheelPickerMaXValue : getSelectedValueFromSegmentedControl(segControl: segCount) , WheelPickerHelper.WheelPickerInterval : getSelectedValueFromSegmentedControl(segControl: segSteps) , WheelPickerHelper.WheelPickerSpacing : sliderSpacing.value , WheelPickerHelper.WheelPickerShowText : true , WheelPickerHelper.WheelPickerMultiplier : getSelectedValueFromSegmentedControl(segControl: segMultiplier) , WheelPickerHelper.WheelPickerUnits : txtFieldUnit.text ?? ""] as [String : Any]
         
         
         wheelPicker = WheelPickerHelper.loadWheelPickerin(parentView: viewPicker, inParentViewController: self, configuration: configuration)
+        
+                let textFieldPublisher = NotificationCenter.default
+                    .publisher(for: UITextField.textDidChangeNotification, object: txtFieldUnit)
+                    .map( {
+                        ($0.object as? UITextField)?.text
+                    })
+                
+                textFieldPublisher
+                    .receive(on: RunLoop.main)
+                    .sink(receiveValue: { [weak self] value in
+                        print("UITextField.text changed to: \(value)")
+                        self?.wheelPicker.config.unit = value ?? ""
+                    })
+                    .store(in: &cancellables)
+        
     }
     
     func getSelectedValueFromSegmentedControl(segControl : UISegmentedControl) -> Int {
@@ -75,3 +94,11 @@ class SwiftViewController: UIViewController {
     }
 }
 
+extension UITextField {
+    func textPublisher() -> AnyPublisher<String, Never> {
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: self)
+            .map { ($0.object as? UITextField)?.text  ?? "" }
+            .eraseToAnyPublisher()
+    }
+  }

@@ -14,5 +14,5 @@ class Config: ObservableObject {
     @Published var spacing : CGFloat = 5
     var showText : Bool = true
     @Published var multipler : Int = 10
-    var unit : String = ""
+    @Published var unit : String = ""
 }
